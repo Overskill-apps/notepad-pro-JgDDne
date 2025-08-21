@@ -38,9 +38,10 @@ jobs:
         
         echo "🚀 Deploying to preview WFP namespace..."
         
-        # Create form data for multipart upload
+        # Create form data for multipart upload (main module must match uploaded file name)
         curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/dispatch/namespaces/${NAMESPACE}/scripts/${SCRIPT_NAME}" \
           -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+          -H "Content-Type: multipart/form-data" \
           -F "metadata={\"main_module\":\"index.js\",\"compatibility_date\":\"2024-01-01\"}" \
           -F "index.js=@dist/index.js;type=application/javascript+module"
         
@@ -58,9 +59,10 @@ jobs:
         
         echo "🚀 Deploying to production WFP namespace..."
         
-        # Create form data for multipart upload
+        # Create form data for multipart upload (main module must match uploaded file name)
         curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/dispatch/namespaces/${NAMESPACE}/scripts/${SCRIPT_NAME}" \
           -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+          -H "Content-Type: multipart/form-data" \
           -F "metadata={\"main_module\":\"index.js\",\"compatibility_date\":\"2024-01-01\"}" \
           -F "index.js=@dist/index.js;type=application/javascript+module"
         
@@ -79,9 +81,10 @@ jobs:
         
         echo "🚀 Deploying to staging WFP namespace..."
         
-        # Create form data for multipart upload
+        # Create form data for multipart upload (main module must match uploaded file name)
         curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/dispatch/namespaces/${NAMESPACE}/scripts/${SCRIPT_NAME}" \
           -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+          -H "Content-Type: multipart/form-data" \
           -F "metadata={\"main_module\":\"index.js\",\"compatibility_date\":\"2024-01-01\"}" \
           -F "index.js=@dist/index.js;type=application/javascript+module"
         
