@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { NoteSidebar } from '@/components/NoteSidebar';
 import { NoteEditor } from '@/components/NoteEditor';
 import { NoteCard } from '@/components/NoteCard';
@@ -238,7 +238,7 @@ export default function Index() {
                       key={note.id}
                       note={note}
                       onClick={() => handleNoteSelect(note)}
-                      isSelected={selectedNote?.id === note.id}
+                      isSelected={selectedNote?.id === (note as Note).id}
                     />
                   ))}
                 </div>

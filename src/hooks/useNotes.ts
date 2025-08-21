@@ -76,8 +76,8 @@ export const useNotes = () => {
     if (updatedNote) {
       analytics.track('note_updated', { 
         note_id: id,
-        title_length: updatedNote.title.length,
-        content_length: updatedNote.content.length
+        title_length: (updatedNote as Note).title.length,
+        content_length: (updatedNote as Note).content.length
       });
     }
 

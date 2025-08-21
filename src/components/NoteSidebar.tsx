@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Plus, Search, FileText, Calendar } from 'lucide-react';
+import { Plus, Search, FileText } from 'lucide-react';
 import { Note } from '@/types/note';
 import { formatDate } from '@/lib/utils';
 
