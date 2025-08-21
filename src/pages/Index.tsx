@@ -233,12 +233,12 @@ export default function Index() {
                       : 'space-y-3'
                   }
                 >
-                  {filteredNotes.map((note) => (
+                  {filteredNotes.map((note: Note) => (
                     <NoteCard
                       key={note.id}
                       note={note}
                       onClick={() => handleNoteSelect(note)}
-                      isSelected={selectedNote?.id === (note as Note).id}
+                      isSelected={selectedNote?.id === note.id}
                     />
                   ))}
                 </div>
